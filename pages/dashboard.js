@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import Navbar from '@/components/Dashboard/Navbar'
-import PhotoUploader from '@/components/PhotoUploader'
+//import PhotoUploader from '@/components/PhotoUploader'
 import { useStateContext } from '@/context/StateContext'
 import { getAllUserPhotos } from '@/backend/Database'
 const Dashboard = () => {
