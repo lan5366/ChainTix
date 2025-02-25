@@ -13,7 +13,7 @@ const Hero = () => {
             </Header>
             <SubHeader>High standards, high expectations, high results</SubHeader>
             <SubheaderAndStarsColumn>
-              <CTAButton>Apply Now</CTAButton>
+              <CTAButton href='/apply'>Apply Now</CTAButton>
             </SubheaderAndStarsColumn>
           </HeroTextColumn>
         </Container>

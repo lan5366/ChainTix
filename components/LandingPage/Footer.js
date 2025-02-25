@@ -9,12 +9,13 @@ const Footer = () => {
           © {new Date().getFullYear()} Aptive Imperium - All Rights Reserved
         </LeftContainer>
         <CenterContainer>
-          <Link href="#">Privacy Policy</Link> | <Link href="#">Terms of Service</Link>
+          {/*<Link href="#">Privacy Policy</Link> | <Link href="#">Terms of Service</Link> */}
         </CenterContainer>
         <RightContainer>
-          <SocialIcon href="#" aria-label="Facebook">FB</SocialIcon>
+          {/*}
+          <<SocialIcon href="#" aria-label="Facebook">FB</SocialIcon>
           <SocialIcon href="#" aria-label="Twitter">TW</SocialIcon>
-          <SocialIcon href="#" aria-label="Instagram">IG</SocialIcon>
+          <SocialIcon href="#" aria-label="Instagram">IG</SocialIcon> */}
         </RightContainer>
       </FooterContainer>
     </FooterSection>
@@ -23,12 +24,16 @@ const Footer = () => {
 
 const FooterSection = styled.footer`
   background-color: #344c38;
-  height: 21vh;
-  
+  height: 25vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #f5f7ed;
 `;
 
 const FooterContainer = styled.div`
-
+  font-size: 2rem;
 `;
 
 const LeftContainer = styled.div``;

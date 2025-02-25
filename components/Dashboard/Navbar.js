@@ -12,13 +12,13 @@ const Navbar = () => {
   return (
     <Nav>
       
-      <Logo onClick={() => logOut(setUser)} href="/">
+      <Logo href="/">
       <Image src="/ImperiumLogo2.png" alt='home icon' width={200} height={200}/>
       </Logo>
       <h1>Aptive Imperium</h1>
       <NavLinks>
         <ButtonLink href="/about">About Us</ButtonLink>
-        <ButtonLink href="/">Apply</ButtonLink>
+        <ButtonLink href="/apply">Apply</ButtonLink>
         <ButtonLink href="/auth/signup">Sign Up</ButtonLink>
         <ButtonLink href="/auth/login">Login</ButtonLink>
       </NavLinks>
