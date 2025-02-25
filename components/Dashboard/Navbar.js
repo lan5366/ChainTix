@@ -19,7 +19,8 @@ const Navbar = () => {
       <NavLinks>
         <ButtonLink href="/about">About Us</ButtonLink>
         <ButtonLink href="/apply">Apply</ButtonLink>
-        <ButtonLink href="/auth/signup">Sign Up</ButtonLink>
+        <ButtonLink href='/'>Gallery</ButtonLink>
+        {/*<ButtonLink href="/auth/signup">Sign Up</ButtonLink> */}
         <ButtonLink href="/auth/login">Login</ButtonLink>
       </NavLinks>
     </Nav>

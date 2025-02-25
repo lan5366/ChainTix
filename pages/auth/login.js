@@ -5,6 +5,8 @@ import { useStateContext } from '@/context/StateContext'
 import {login, isEmailInUse} from '@/backend/Auth'
 import Link from 'next/link'
 import Navbar from '@/components/Dashboard/Navbar'
+import Footer from "@/components/LandingPage/Footer"
+
 const Login = () => {
 
   const { user, setUser } = useStateContext()
@@ -23,6 +25,10 @@ const Login = () => {
     <>
     <Navbar/>
     <Section>
+        <StateMent>Login Authentication is only available for current reps of Aptive Imperium</StateMent>
+        <StateMent>
+        If you are a current rep and are having trouble logging in, please contact your manager.
+        </StateMent>
         <Header>Login</Header>
         <InputTitle>Email</InputTitle>
         <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
@@ -34,12 +40,22 @@ const Login = () => {
         <MainButton onClick={handleLogin}>Login</MainButton>
 
     </Section>
+    <Footer/>
     </>
   )
 }
 
+const StateMent = styled.div`
+    font-size: 2rem;
+    color: #1e2d3a;
+    alighn: center;
+`;
+
 const Section = styled.section`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
 `;
 
 const Header = styled.h1`
@@ -48,7 +64,7 @@ const Header = styled.h1`
 
 const Input = styled.input`
   font-size: 16px;
-
+  max-width: 350px;
 `;
 
 const InputTitle = styled.label` /* Changed to label for semantics */
@@ -58,6 +74,8 @@ const InputTitle = styled.label` /* Changed to label for semantics */
 
 const MainButton = styled.button`
   background-color: #007bff;
+  max-width: 350px;
+
   &:hover {
     background-color: #0056b3;
   }

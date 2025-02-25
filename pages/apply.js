@@ -26,7 +26,7 @@ const StateMent = styled.div`
 
 const PageContainer = styled.div`
   width: 100%;
-  height: 30vh; 
+  height: 40vh; 
   display: flex;
   align-items: center;
   justify-content: center;
