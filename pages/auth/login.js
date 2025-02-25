@@ -27,7 +27,7 @@ const Login = () => {
     <Section>
         <StateMent>Login Authentication is only available for current reps of Aptive Imperium</StateMent>
         <StateMent>
-        If you are a current rep and are having trouble logging in, please contact your manager.
+        If you are a rep and are having trouble logging in, please contact your manager.
         </StateMent>
         <Header>Login</Header>
         <InputTitle>Email</InputTitle>
