@@ -31,7 +31,7 @@ const Nav = styled.nav`
   display: flex;
   padding: 15px 20px;
   align-items: center;
-  background-color: #b5c5b2;
+  background-color: #344c38;
   justify-content: space-between;
   color: white;
   width: 100%;

@@ -17,7 +17,7 @@ export const logIn = async (email, password) => {
         const user = userCredential.user;
         return user;
     } catch (error) {
-        return error;
+        throw error;
     }
 }
 

@@ -8,7 +8,7 @@ const Hero = () => {
         <Container>
           <HeroTextColumn>
             <Header>
-              Welcome to one of the fastest growing teams... at one of the fastest growing sales company's in the world.
+              Welcome to one of the fastest growing regions... at one of the fastest growing sales company's in the world
               <Highlight></Highlight>
             </Header>
             <SubHeader>High standards, high expectations, high results</SubHeader>
