@@ -30,17 +30,17 @@ const SignupContainer = styled.div`
 `;
 
 const PreApprovalNotice = styled.p`
-  background-color: #fff3cd; /* Light yellow background */
-  color: #856404; /* Dark gold text */
+  background-color: #fff3cd; 
+  color: #856404; 
   padding: 12px;
   border-radius: 8px;
   font-size: 16px;
   text-align: center;
-  max-width: 420px; /* ✅ Matches sign-up form width */
+  max-width: 420px; 
   width: 100%;
   border: 1px solid #ffeeba;
-  margin-bottom: 20px; /* ✅ Reduced space between notice & form */
-  margin-top: -40px; /* ✅ Pulls it closer without overlapping */
+  margin-bottom: 20px; 
+  margin-top: -40px; 
 `;
 
 export default SignupPage;

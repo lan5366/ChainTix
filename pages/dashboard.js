@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Navbar from '@/components/Dashboard/Navbar';
 import { useStateContext } from '@/context/StateContext';
 import { getAllUserPhotos } from '@/backend/Database';
+import Footer from '@/components/LandingPage/Footer';
 
 const Dashboard = () => {
   const { user } = useStateContext();
@@ -23,11 +24,12 @@ const Dashboard = () => {
         <Title>Jackson is Gay</Title>
         <Subtitle></Subtitle>
       </DashboardContainer>
+      <Footer/>
     </>
   );
 };
 
-// ✅ Styled Components
+
 const DashboardContainer = styled.div`
   display: flex;
   flex-direction: column;

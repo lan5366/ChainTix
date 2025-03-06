@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useRouter } from "next/router"; 
 import styled from "styled-components";
 import { signUp } from "@/backend/Auth";
 import Link from "next/link";
@@ -7,12 +8,39 @@ const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const router = useRouter(); 
+
+  const checkPreapproval = async (email) => {
+    try {
+      const res = await fetch("/api/checkPa", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!res.ok) {
+        return false;
+      }
+
+      return true;
+    } catch (error) {
+      return false;
+    }
+  };
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+
+    if (!(await checkPreapproval(email))) {
+      setMessage("Your email is not preapproved for registration.");
+      setTimeout(() => router.push("/"), 2000); 
+      return;
+    }
+
     try {
       await signUp(email, password);
       setMessage("Sign-up successful!");
+      setTimeout(() => router.push("/dashboard"), 2000);
     } catch (error) {
       setMessage(error.message);
     }
@@ -23,19 +51,19 @@ const SignUpForm = () => {
       <SignUpFormStyled onSubmit={handleSignUp}>
         <Title>Sign Up</Title>
         {message && <MessageText>{message}</MessageText>}
-        <Input 
-          type="email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          placeholder="Enter your email" 
-          required 
+        <Input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your email"
+          required
         />
-        <Input 
-          type="password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          placeholder="Enter your password" 
-          required 
+        <Input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter your password"
+          required
         />
         <SignUpButton type="submit">Sign Up</SignUpButton>
 
@@ -55,7 +83,6 @@ const SignUpContainer = styled.div`
   background-color: #f5f7ed;
 `;
 
-
 const Title = styled.h2`
   margin-bottom: 20px;
   color: #344c38;
@@ -69,7 +96,7 @@ const SignUpFormStyled = styled.form`
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  width: 420px; 
+  width: 420px;
   text-align: center;
 `;
 
@@ -89,7 +116,7 @@ const SignUpButton = styled.button`
   padding: 14px;
   background-color: #344c38;
   color: white;
-  font-size: 1.1rem; 
+  font-size: 1.1rem;
   font-weight: bold;
   border: none;
   border-radius: 6px;
@@ -101,10 +128,9 @@ const SignUpButton = styled.button`
   }
 `;
 
-
 const LoginText = styled.p`
   font-size: 14px;
-  margin-top: 15px; 
+  margin-top: 15px;
 `;
 
 const StyledLink = styled(Link)`

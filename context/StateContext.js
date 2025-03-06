@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
+
 const Context = createContext();
 
 export const StateContext = ({ children }) => {

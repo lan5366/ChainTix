@@ -1,4 +1,4 @@
-import { preapprovedEmails } from "@/backend/preapprovedEmails";
+import { paEmails } from "@/backend/paEmails";
 
 export default function handler(req, res) {
   if (req.method !== 'POST') {
@@ -11,7 +11,7 @@ export default function handler(req, res) {
     return res.status(400).json({ error: 'Email is required' });
   }
 
-  if (!preapprovedEmails.includes(email.toLowerCase())) {
+  if (!paEmails.includes(email.toLowerCase())) {
     return res.status(403).json({ error: "Your email is not preapproved for registration." });
   }
 
