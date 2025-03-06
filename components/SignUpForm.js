@@ -8,6 +8,7 @@ const SignUpForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [fullName, setFullName] = useState("");
   const router = useRouter(); 
 
   const checkPreapproval = async (email) => {
@@ -51,6 +52,13 @@ const SignUpForm = () => {
       <SignUpFormStyled onSubmit={handleSignUp}>
         <Title>Sign Up</Title>
         {message && <MessageText>{message}</MessageText>}
+        <Input
+          type="text"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          placeholder="Enter your full name"
+          required
+          />
         <Input
           type="email"
           value={email}

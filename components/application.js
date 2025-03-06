@@ -1,16 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { db } from "@/backend/Firebase"; 
+import { collection, getDocs } from "firebase/firestore";
 
 const Apply = () => {
     const [formData, setFormData] = useState({
-        Name: '',
-        Email: '',
-        Phone: '',
-        message: '',
+        name: '',
+        email: '',
+        phone: '',
+        selectedUser: '', 
     });
 
+    const [users, setUsers] = useState([]); 
+
+   
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const usersCollection = await getDocs(collection(db, "users"));
+                const userList = usersCollection.docs.map(doc => ({
+                    id: doc.id,
+                    fullName: doc.data().fullName, 
+                }));
+                setUsers(userList);
+            } catch (error) {
+                console.error("Error fetching users:", error);
+            }
+        };
+
+        fetchUsers();
+    }, []);
+
     const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value});
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const handleSubmit = (e) => {
@@ -20,44 +42,47 @@ const Apply = () => {
     };
 
     return (
-        
-            <FormContainer>
-                <FormTitle>Apply Now</FormTitle>
+        <FormContainer>
+            <FormTitle>Apply Now</FormTitle>
 
-                <Form onSubmit={handleSubmit}>
-                    <Input 
-                        type='text'
-                        name='Name'
-                        placeholder='Full Name'
-                        value={formData.Name}
-                        onChange={handleChange}
-                        required
-                        />
-                    <Input 
-                        type='email'
-                        name='email'
-                        placeholder='Email Address'
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        />
-                    <Input 
-                        type='tel'
-                        name='phone'
-                        placeholder='Phone Number'
-                        value={formData.Phone}
-                        onChange={handleChange}
-                        required
-                        />
-                    
+            <Form onSubmit={handleSubmit}>
+                <Input 
+                    type='text'
+                    name='name'
+                    placeholder='Full Name'
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                />
+                <Input 
+                    type='email'
+                    name='email'
+                    placeholder='Email Address'
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                />
+                <Input 
+                    type='tel'
+                    name='phone'
+                    placeholder='Phone Number'
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                />
 
-                    <SubmitButton type='Submit'>Submit Application</SubmitButton>
-                </Form>
-            </FormContainer>
-        
-    )
+                <Select name="selectedUser" value={formData.selectedUser} onChange={handleChange} required>
+                    <option value="">Select a registered user</option>
+                    {users.map(user => (
+                        <option key={user.id} value={user.fullName}>{user.fullName}</option>
+                    ))}
+                </Select>
+
+                <SubmitButton type='submit'>Submit Application</SubmitButton>
+            </Form>
+        </FormContainer>
+    );
 };
-
 
 const FormContainer = styled.div`
   width: 100%;
@@ -87,12 +112,13 @@ const Input = styled.input`
   font-size: 1rem;
 `;
 
-const TextArea = styled.textarea`
+const Select = styled.select`
   padding: 12px;
+  border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  height: 100px;
-  resize: none;
+  background-color: white;
+  cursor: pointer;
 `;
 
 const SubmitButton = styled.button`
@@ -110,6 +136,5 @@ const SubmitButton = styled.button`
     color: #309c42;
   }
 `;
-
 
 export default Apply;

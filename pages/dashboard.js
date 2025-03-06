@@ -21,7 +21,7 @@ const Dashboard = () => {
     <>
       <Navbar />
       <DashboardContainer>
-        <Title>Jackson is Gay</Title>
+        <Title></Title>
         <Subtitle></Subtitle>
       </DashboardContainer>
       <Footer/>
