@@ -4,6 +4,10 @@ import { getFirestore } from "firebase/firestore";
 //import { getStorage } from "firebase/storage";
 import { getAuth } from "firebase/auth";
 
+{/*
+  firebase basic setuip
+  */}
+
 const firebaseConfig = {
     apiKey: "AIzaSyC0fP7JHmYXZQs_hwdUBrnkYvAFgLX_F4Y",
     authDomain: "aptiveimperium.firebaseapp.com",

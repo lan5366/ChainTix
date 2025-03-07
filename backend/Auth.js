@@ -1,6 +1,9 @@
 import { auth } from "./Firebase";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, fetchSignInMethodsForEmail } from "firebase/auth";
   
+{/* 
+    auth setup for signup login and logout - although did not implement logout
+    */}
 export const signUp = async (email, password) => {
     try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);

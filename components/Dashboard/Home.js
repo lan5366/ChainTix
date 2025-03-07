@@ -3,6 +3,9 @@ import Link  from 'next/link';
 import Image from "next/image";
 import styled from 'styled-components';
 
+{/*
+  home component really button for logo
+  */}
 const Home = () => {
   return (
     <Square href="/dashboard">

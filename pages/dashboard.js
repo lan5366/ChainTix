@@ -5,6 +5,11 @@ import { useStateContext } from '@/context/StateContext';
 import { getAllUserPhotos } from '@/backend/Database';
 import Footer from '@/components/LandingPage/Footer';
 
+{/*
+  post sign in dashboard page
+  */}
+
+
 const Dashboard = () => {
   const { user } = useStateContext();
 

@@ -3,6 +3,10 @@ import { styled } from 'styled-components'
 import Footer from "@/components/LandingPage/Footer"
 import Apply from '@/components/application'
 
+{/*
+  application page
+  */}
+
 export default function ApplicationPage() {
   return (
     <>

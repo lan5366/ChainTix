@@ -3,6 +3,10 @@ import { useRouter } from "next/router";
 import styled from "styled-components";
 import { signUp } from "@/backend/Auth";
 import Link from "next/link";
+{/*
+  sign up component that checks to make sure verified and sends user to different
+  places based on state
+  */}
 
 const SignUpForm = () => {
   const [email, setEmail] = useState("");

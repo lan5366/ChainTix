@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+{/*
+  about us page component
+  */}
+
 const teamMembers = [
   { id: 1, name: "Jackson Lamont", image: "/reps/Jackson_Lamont.jpg", bio: "Jackson is in his third year with Aptive and is the head of Imperium" },
   { id: 2, name: "Adrian Wertheim", image: "/reps/Adrian_Wertheim.jpg", bio: "Adrian is a sales strategist with a passion for developing winning teams." },

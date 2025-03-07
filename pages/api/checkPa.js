@@ -1,4 +1,7 @@
 import { paEmails } from "@/backend/paEmails";
+{/*
+  makes sure users are varified to sign up
+  */}
 
 export default function handler(req, res) {
   if (req.method !== 'POST') {

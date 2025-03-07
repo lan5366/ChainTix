@@ -4,6 +4,10 @@ import Footer from "@/components/LandingPage/Footer";
 import SignUpForm from "@/components/SignUpForm";
 import styled from "styled-components";
 
+{/*
+  sign up page set up
+  */}
+
 const SignupPage = () => {
   return (
     <>

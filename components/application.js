@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { db } from "@/backend/Firebase"; 
 import { collection, getDocs } from "firebase/firestore";
 
+{/*
+  application component
+  */}
+
 const Apply = () => {
     const [formData, setFormData] = useState({
         name: '',

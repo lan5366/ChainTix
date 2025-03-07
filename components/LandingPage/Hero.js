@@ -1,6 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
+{/*
+  main component for landing page
+  */}
+
+
 const Hero = () => {
   return (
     <Section>

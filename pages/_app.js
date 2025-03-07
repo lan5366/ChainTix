@@ -11,6 +11,9 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 `
+{/*
+  used for logo
+  */}
 
 export default function App({ Component, pageProps }) {
   return (

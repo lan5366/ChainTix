@@ -7,6 +7,9 @@ import Link from 'next/link';
 import Navbar from '@/components/Dashboard/Navbar';
 import Footer from '@/components/LandingPage/Footer';
 
+{/*
+  login page setup
+  */}
 const Login = () => {
   const { user, setUser } = useStateContext();
   const [email, setEmail] = useState('');

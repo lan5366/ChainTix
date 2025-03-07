@@ -6,6 +6,10 @@ import { useStateContext } from '@/context/StateContext';
 //import Home from '@/components/Dashboard/Home'; //got rid of
 import Image from 'next/image';
 
+{/*
+  navbar component that is used for most pages
+  */}
+
 const Navbar = () => {
   const { setUser } = useStateContext()
 
