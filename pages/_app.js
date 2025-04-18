@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
         <Head>
-          <title>Aptive Imperium | Homepage</title>
+          <title>ChainTix | Homepage</title>
           <meta name='description' content='Put a description here about your app'/>
           <meta name='robots' content='index, follow'/>
           <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"/>

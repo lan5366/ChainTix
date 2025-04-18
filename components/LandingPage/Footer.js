@@ -6,7 +6,7 @@ const Footer = () => {
     <FooterSection>
       <FooterContainer>
         <LeftContainer>
-          © {new Date().getFullYear()} Aptive Imperium - All Rights Reserved
+          © {new Date().getFullYear()} Logan Newell - All Rights Reserved
         </LeftContainer>
         <CenterContainer>
           {/*<Link href="#">Privacy Policy</Link> | <Link href="#">Terms of Service</Link> */}
@@ -23,7 +23,7 @@ const Footer = () => {
 };
 
 const FooterSection = styled.footer`
-  background-color: #344c38;
+  background-color: #448fa3;
   height: 25vh;
   display: flex;
   align-items: center;

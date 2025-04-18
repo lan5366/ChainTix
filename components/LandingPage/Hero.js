@@ -1,87 +1,148 @@
 import React from 'react';
+import Head from 'next/head';
 import styled from 'styled-components';
 
-{/*
-  main component for landing page
-  */}
-
-
-const Hero = () => {
+const Home = () => {
   return (
-    <Section>
-      <Overlay>
-        <Container>
-          <HeroTextColumn>
-            <Header>
-              Welcome to one of the fastest growing regions... at one of the fastest growing sales company's in the world
-              <Highlight></Highlight>
-            </Header>
-            <SubHeader>High standards, high expectations, high results</SubHeader>
-            <SubheaderAndStarsColumn>
-              <CTAButton href='/apply'>Apply Now</CTAButton>
-            </SubheaderAndStarsColumn>
-          </HeroTextColumn>
-        </Container>
-      </Overlay>
-    </Section>
+    <Main>
+      <Head>
+        <title>ChainTix | Decentralized Ticketing</title>
+        <meta name="description" content="Buy and sell verified event tickets on the blockchain with ChainTix." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <HeroSection>
+        <Title>🎟️ ChainTix</Title>
+        <Subtitle>Decentralized ticketing — transparent, secure, and fair.</Subtitle>
+        <CTAGroup>
+          <PrimaryButton>Explore Events</PrimaryButton>
+          <SecondaryButton>Learn More</SecondaryButton>
+        </CTAGroup>
+      </HeroSection>
+
+      <FeaturesSection>
+        <Feature>
+          <FeatureIcon>🛡️</FeatureIcon>
+          <FeatureTitle>Trustless Security</FeatureTitle>
+          <FeatureText>All tickets are backed by blockchain verification.</FeatureText>
+        </Feature>
+        <Feature>
+          <FeatureIcon>🔁</FeatureIcon>
+          <FeatureTitle>Peer-to-Peer Resale</FeatureTitle>
+          <FeatureText>Resell or transfer tickets easily with low fees.</FeatureText>
+        </Feature>
+        <Feature>
+          <FeatureIcon>🎉</FeatureIcon>
+          <FeatureTitle>Real Ownership</FeatureTitle>
+          <FeatureText>Tickets live in your wallet — no middlemen.</FeatureText>
+        </Feature>
+      </FeaturesSection>
+
+      <CTASection>
+        <CTAHeadline>Ready to change how tickets work?</CTAHeadline>
+        <PrimaryButton>Get Started</PrimaryButton>
+      </CTASection>
+    </Main>
   );
 };
 
-const Section = styled.section`
-background-color: #78856e;
-height: 60vh;
-display: flex;
-align-items: center;
-justify-content: center;
-`;
+export default Home;
 
-const Overlay = styled.div`
-`;
+// Styled Components
 
-const Container = styled.div`
-`;
-
-const HeroTextColumn = styled.div`
-`;
-
-const Header = styled.h1`
-  font-size: 3rem;
-  color: #f5f7ed;
-  margin-bottom: 20px;
-`;
-
-const Highlight = styled.span`
-`;
-
-const SubHeader = styled.h2`
-  font-size: 2rem;
-  align-items: center;
-  color: #f5f7ed;
-  margin-top: 20px;
-  
-`;
-
-const SubheaderAndStarsColumn = styled.div`
+const Main = styled.main`
+  background-color: #68c5db;
+  min-height: 100vh;
+  padding: 4rem 2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  font-family: 'Inter', sans-serif;
 `;
 
-const CTAButton = styled.button`
-  padding: 10px 20px;
-  background-color: white;
-  color: #309c42;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-  font-size: 2rem;
-  margin-top: 30px;
-  transition: background-color 0.3s ease;
+const HeroSection = styled.section`
+  text-align: center;
+  margin-bottom: 4rem;
+`;
 
-  &:hover {
-    background-color: #309c42;
-    color: white;
+const Title = styled.h1`
+  font-size: 3rem;
+  color: #1e1e1e;
+`;
+
+const Subtitle = styled.p`
+  font-size: 1.25rem;
+  color: #333;
+  margin-top: 1rem;
+`;
+
+const CTAGroup = styled.div`
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+`;
+
+const PrimaryButton = styled.button`
+  padding: 0.9rem 1.6rem;
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+`;
+
+const SecondaryButton = styled(PrimaryButton)`
+  background-color: transparent;
+  color: #1e1e1e;
+  border: 2px solid #1e1e1e;
+`;
+
+const FeaturesSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  width: 100%;
+  margin-bottom: 4rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
   }
 `;
 
-export default Hero;
+const Feature = styled.div`
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+`;
+
+const FeatureIcon = styled.div`
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+`;
+
+const FeatureTitle = styled.h3`
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+`;
+
+const FeatureText = styled.p`
+  font-size: 1rem;
+  color: #444;
+`;
+
+const CTASection = styled.section`
+  text-align: center;
+  margin-top: 4rem;
+`;
+
+const CTAHeadline = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1e1e1e;
+`;

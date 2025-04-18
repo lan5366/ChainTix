@@ -1,54 +1,67 @@
 import React from 'react';
 import Link from 'next/link';
+import styled from 'styled-components';
 
 const Navbar = () => {
   return (
-    <nav style={styles.navbar}>
-      <Link href="/">
-        <img src="/logo.png" alt="ChainTix Logo" style={styles.logo} />
+    <NavBarContainer>
+      <Link href="/" passHref>
+        <Logo src="/logo.png" alt="ChainTix Logo" />
       </Link>
 
-      <div style={styles.rightSection}>
-        <Link href="/events">
-          <button style={styles.button}>Events</button>
+      <RightSection>
+        <Link href="/createevent" passHref>
+        <NavButton>Create Event</NavButton>
         </Link>
-        <button style={styles.button}>Connect Wallet</button>
-      </div>
-    </nav>
+        <Link href="/events" passHref>
+          <NavButton>Events</NavButton>
+        </Link>
+        <NavButton>Connect Wallet</NavButton>
+      </RightSection>
+    </NavBarContainer>
   );
 };
 
-const styles = {
-  navbar: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: '1.5rem 3rem',
-    backgroundColor: '#fcf8ec', // matches logo background
-    borderBottom: '2px solid #ddd',
-  },
-  logo: {
-    height: '80px',
-    maxHeight: '100px',
-    objectFit: 'contain',
-    cursor: 'pointer',
-  },
-  rightSection: {
-    display: 'flex',
-    gap: '1rem',
-    alignItems: 'center',
-  },
-  button: {
-    padding: '0.9rem 1.6rem',
-    fontSize: '1rem',
-    backgroundColor: '#1e1e1e',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '8px',
-    fontWeight: '600',
-    cursor: 'pointer',
-    transition: 'background-color 0.3s ease',
-  },
-};
+
+
+// Styled Components
+
+const NavBarContainer = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  background-color: #fcf8ec; 
+  border-bottom: 2px solid #ddd;
+`;
+
+const Logo = styled.img`
+  height: 150px;
+  max-height: 200px;
+  object-fit: contain;
+  cursor: pointer;
+`;
+
+const RightSection = styled.div`
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+`;
+
+const NavButton = styled.button`
+  padding: 0.9rem 1.6rem;
+  font-size: 1rem;
+  background-color: #1e1e1e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #333;
+  }
+`;
 
 export default Navbar;
