@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "@/components/Dashboard/Navbar";
 import Footer from "@/components/LandingPage/Footer";
-import SignUpForm from "@/components/SignUpForm";
+
 import styled from "styled-components";
 
 {/*
@@ -17,7 +17,7 @@ const SignupPage = () => {
           <strong>Important:</strong> Only preapproved users can access login features.
           If you were not preapproved, your account will not be able to sign in.
         </PreApprovalNotice>
-        <SignUpForm />
+        
       </SignupContainer>
       <Footer />
     </>
