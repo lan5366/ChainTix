@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const Home = () => {
   return (
@@ -15,8 +16,12 @@ const Home = () => {
         <Title>🎟️ ChainTix</Title>
         <Subtitle>Decentralized ticketing — transparent, secure, and fair.</Subtitle>
         <CTAGroup>
+          <Link href="/events" passHref>
           <PrimaryButton>Explore Events</PrimaryButton>
+          </Link>
+          <Link href="/moreinfo" passHref>
           <SecondaryButton>Learn More</SecondaryButton>
+          </Link>
         </CTAGroup>
       </HeroSection>
 
@@ -40,7 +45,9 @@ const Home = () => {
 
       <CTASection>
         <CTAHeadline>Ready to change how tickets work?</CTAHeadline>
+        <Link href="/events" passHref>
         <PrimaryButton>Get Started</PrimaryButton>
+        </Link>
       </CTASection>
     </Main>
   );
